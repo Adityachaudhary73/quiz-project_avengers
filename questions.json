@@ -1,0 +1,146 @@
+[
+  {
+    "type": "python",
+    "question": "What is the correct file extension for Python files?",
+    "options": [".pyt", ".py", ".python"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "python",
+    "question": "Which keyword is used to create a function in Python?",
+    "options": ["def", "func", "create", "function"],
+    "correctAnswer": 0
+  },
+  {
+    "type": "python",
+    "question": "What is the output of the following code? print(2 + 3 * 2)",
+    "options": ["10", "8", "42", "7"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "python",
+    "question": "Which of the following is NOT a valid variable name in Python?",
+    "options": ["my_var", "2ndVar", "myVar2", "_myVar"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "python",
+    "question": "How do you start a comment in Python?",
+    "options": ["//", "<!- >", "#", "/* */"],
+    "correctAnswer": 2
+  },
+  {
+    "type": "python",
+    "question": "What is the output of the following code? print(\"Hello\"[1])",
+    "options": ["H", "e", "l", "o"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "python",
+    "question": "Which of these data types is mutable in Python?",
+    "options": ["tuple", "string", "list", "frozenset"],
+    "correctAnswer": 2
+  },
+  {
+    "type": "c",
+    "question": "Which of the following is a valid variable declaration in C?",
+    "options": ["int 1number;", "int number1;", "float var name;", "char@name;"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "c",
+    "question": "Which symbol is used to end a statement in C?",
+    "options": [":", ".", ";", ","],
+    "correctAnswer": 2
+  },
+  {
+    "type": "c",
+    "question": "What is the size of an int in C on most 32-bit systems?",
+    "options": ["2 bytes", "4 bytes", "8 bytes", "16 bytes"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "c",
+    "question": "What is the correct syntax to include a library in C?",
+    "options": ["include <stdio.h>", "#include <stdio.h>", "#include stdio.h", "#library <stdio.h>"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "c",
+    "question": "Which function is used to print data to the screen in C?",
+    "options": ["scanf()", "display()", "cout", "printf()"],
+    "correctAnswer": 3
+  },
+  {
+    "type": "c",
+    "question": "What will the following code output? printf(\"Hello, World!\");",
+    "options": ["Hello, World!", "Hello,World!", "Error", "None"],
+    "correctAnswer": 0
+  },
+  {
+    "type": "c",
+    "question": "What is the value of x after the following code executes? int x = 10; x++;",
+    "options": ["9", "10", "11", "12"],
+    "correctAnswer": 2
+  },
+  {
+    "type": "htmlcss",
+    "question": "What does HTML stand for?",
+    "options": ["Hypertext Machine Language", "Hypertext Markup Language", "Hyper Tool Markup Language", "Hyperlink Machine Language"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "htmlcss",
+    "question": "Which HTML tag is used to create a hyperlink?",
+    "options": ["<link>", "<a>", "<href>", "<hyperlink>"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "htmlcss",
+    "question": "Which HTML element is used to define the largest heading?",
+    "options": ["<h6>", "<h1>", "<header>", "<head>"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "htmlcss",
+    "question": "Which attribute is used to specify an alternative text for an image in HTML?",
+    "options": ["alt", "src", "title", "text"],
+    "correctAnswer": 0
+  },
+  {
+    "type": "htmlcss",
+    "question": "Which of the following tags is used to create an ordered list in HTML?",
+    "options": ["<ul>", "<ol>", "<li>", "<list>"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "htmlcss",
+    "question": "What does CSS stand for?",
+    "options": ["Creative Style Sheets", "Cascading Style Sheets", "Colorful Style Sheets", "Computer Style Sheets"],
+    "correctAnswer": 1
+  },
+  {
+    "type": "htmlcss",
+    "question": "Which property is used to change the background color of an element in CSS?",
+    "options": ["color", "bgcolor", "background-color", "background"],
+    "correctAnswer": 2
+  },
+  {
+    "type": "htmlcss",
+    "question": "How do you make text bold using CSS?",
+    "options": ["font-weight: bold;", "text-style: bold;", "font-style: bold;", "text-weight: bold;"],
+    "correctAnswer": 0
+  },
+  {
+    "type": "htmlcss",
+    "question": "Which CSS property is used to change the font of an element?",
+    "options": ["font-weight", "font-style", "font-family", "text-font"],
+    "correctAnswer": 2
+  },
+  {
+    "type": "htmlcss",
+    "question": "What is the correct syntax for adding a CSS file to an HTML document?",
+    "options": ["<style src=\"styles.css\">", "<link rel=\"stylesheet\" href=\"styles.css\">", "<css link=\"styles.css\">", "<stylesheet>styles.css</stylesheet>"],
+    "correctAnswer": 1
+  }
+]

@@ -1,0 +1,494 @@
+:root {
+    --neutral-bg: #f0f0f0; /* Light background */
+    --neutral-secondary: #e0e0e0; /* Light secondary background */
+    --accent-color: #00FFD1;
+    --text-color: #000000; /* Change text color to black */
+    --box-bg: #87CEEB; /* Sky blue background for text boxes */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--neutral-bg); /* Light background */
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 1s ease-in-out;
+    padding: 20px;
+    overflow: hidden; /* Ensure background animations are contained */
+    perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes moveDigits {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+.digit-animation {
+    position: absolute;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    animation: moveDigits 2s linear infinite; /* Very fast speed */
+    transform: translateZ(0); /* Ensure digits are in 3D space */
+}
+
+.digit-animation:nth-child(2) {
+    top: 10%;
+    animation-delay: 0s;
+}
+
+.digit-animation:nth-child(3) {
+    top: 30%;
+    animation-delay: 0.5s;
+}
+
+.digit-animation:nth-child(4) {
+    top: 50%;
+    animation-delay: 1s;
+}
+
+.digit-animation:nth-child(5) {
+    top: 70%;
+    animation-delay: 1.5s;
+}
+
+.digit-animation:nth-child(6) {
+    top: 90%;
+    animation-delay: 2s;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    animation: slideInLeft 1s ease-in-out;
+    justify-content: center;
+    margin-bottom: 20px;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, hwb(169 0% 0%), #008080);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 209, 0.5);
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.logo span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    color: var(--neutral-bg);
+    font-weight: bold;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(235, 227, 227, 0.7); /* Add a semi-transparent background to content */
+    border-radius: 10px; /* Add rounded corners */
+    backdrop-filter: blur(5px); /* Add blur effect to background */
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, var(--accent-color), #008080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: slideInRight 1s ease-in-out;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.description {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.7); /* Change text color to black */
+    font-size: 2rem; /* Double the font size */
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.start-btn, .modal-button {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(0, 255, 209, 0.3);
+    animation: bounceIn 1s ease-in-out;
+    margin-top: 20px;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.start-btn:hover, .modal-button:hover {
+    transform: scale(1.1) translateY(-10px) translateZ(50px); /* Add 3D effect */
+    box-shadow: 0 15px 30px rgba(0, 255, 209, 0.5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.modal-content {
+    background: var(--neutral-secondary);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: zoomIn 0.5s ease-in-out;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background: var(--neutral-bg);
+    color: var(--text-color);
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.dashboard {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.language-buttons {
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Center vertically */
+    gap: 20px;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-in-out;
+    width: 200px;
+    justify-content: center;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.lang-btn img {
+    margin-right: 10px; /* Space between image and text */
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.lang-btn:hover {
+    background-color: var(--text-color);
+}
+
+.quiz-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    animation: fadeIn 1s ease-in-out;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.score-card {
+    display: none;
+    background: var(--neutral-secondary);
+    color: var(--text-color);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in-out;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.score-card h2 {
+    margin-bottom: 20px;
+}
+
+.score-card p {
+    margin-bottom: 20px;
+    color: var(--accent-color); /* Ensure the score text is clearly visible */
+}
+
+.question-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.option-btn {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.option-btn:hover {
+    background-color: var(--text-color);
+    color: var(--neutral-bg); /* Ensure text is visible on hover */
+}
+
+#final-score {
+    color: var(--accent-color); /* Ensure the score text is clearly visible */
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.page {
+    display: none;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+#choice-modal.page,
+#login-modal.page,
+#registration-modal.page,
+#user-dashboard.page {
+    display: none;
+}
+
+#landing-page {
+    display: flex;
+    z-index: 0;
+}
+
+.congratulations {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.falling-flowers {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: url('images/flower.png') no-repeat center center;
+    background-size: contain;
+    animation: fall 5s linear infinite;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+.falling-sparkles {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: url('images/sparkle.png') no-repeat center center;
+    background-size: contain;
+    animation: fall 5s linear infinite;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+@keyframes moveDiagonally {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100vw, 100vh);
+    }
+}
+
+.background-animation {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 255, 209, 0.2);
+    border-radius: 50%;
+    animation: moveDiagonally 10s linear infinite;
+    transform: translateZ(50px); /* Add 3D effect */
+}
+
+/* Add multiple animated elements */
+.background-animation:nth-child(2) {
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.background-animation:nth-child(3) {
+    animation-duration: 14s;
+    animation-delay: 4s;
+}
+
+.background-animation:nth-child(4) {
+    animation-duration: 16s;
+    animation-delay: 6s;
+}
+
+.background-animation:nth-child(5) {
+    animation-duration: 18s;
+    animation-delay: 8s;
+}
+
+.text-box {
+    display: inline-block;
+    background-color: var(--box-bg);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.modal-content h2,
+.modal-content p,
+.modal-content label,
+.modal-content a {
+}
+
+#user-dashboard h1,
+#user-dashboard p {
+}
+
+.question h3,
+.question-options button {
+}
+
+.binary {
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    font-size: 20px;
+    color: #0f0;
+    font-family: monospace;
+}

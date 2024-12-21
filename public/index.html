@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BRAIN BITE - Programming Quiz Platform</title>
+    <meta name="description" content="Challenge yourself with programming quizzes! Test your knowledge across multiple languages, track your progress, and become a coding master.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="BRAIN BITE - Programming Quiz Platform">
+    <meta property="og:description" content="Challenge yourself with programming quizzes! Test your knowledge across multiple languages, track your progress, and become a coding master.">
+    <meta property="og:image" content="images/brain_bite_logo.png">
+    <meta property="og:url" content="http://localhost:3000">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Ensure the favicon file exists at the specified path -->
+</head>
+<body>
+    <!-- Background animations -->
+    <div class="background-animation"></div>
+    <div class="background-animation"></div>
+    <div class="background-animation"></div>
+    <div class="background-animation"></div>
+    <div class="background-animation"></div>
+
+    <!-- Digit animations -->
+    <div class="digit-animation" style="background-image: url('images/0.png'); left: -30px;"></div>
+    <div class="digit-animation" style="background-image: url('images/1.png'); left: -30px;"></div>
+    <div class="digit-animation" style="background-image: url('images/0.png'); left: -30px;"></div>
+    <div class="digit-animation" style="background-image: url('images/1.png'); left: -30px;"></div>
+    <div class="digit-animation" style="background-image: url('images/0.png'); left: -30px;"></div>
+    <div class="digit-animation" style="background-image: url('images/1.png'); left: -30px;"></div>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="content page" style="display: flex;">
+        <div class="logo-container">
+            <div class="logo">
+                <span>BB</span>
+            </div>
+            <h1>Welcome to QuizSite</h1>
+        </div>
+
+        <h1 class="title">BRAIN BITE</h1>
+        <p class="description">
+            Challenge yourself with programming quizzes! Test your knowledge across multiple languages, track your progress, and become a coding master.
+        </p>
+        <button class="start-btn" onclick="showChoiceModal()">GET STARTED</button>
+    </div>
+
+    <!-- Choice Modal -->
+    <div id="choice-modal" class="modal page">
+        <div class="modal-content">
+            <h2>Welcome to BRAIN BITE</h2>
+            <p>What would you like to do?</p>
+            <button class="modal-button" onclick="showLoginModal()">Login</button>
+            <button class="modal-button" onclick="showRegistrationModal()">Register</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal page" style="display: none;">
+        <div class="modal-content">
+            <h2>Login to BRAIN BITE</h2>
+            <input type="text" id="login-username" placeholder="Username" class="modal-input">
+            <input type="password" id="login-password" placeholder="Password" class="modal-input">
+            <label>
+                <input type="checkbox" id="remember-me-login"> Remember Me
+            </label>
+            <button class="modal-button" onclick="login()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="showRegistrationModal()">Create Account</a></p>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registration-modal" class="modal page" style="display: none;">
+        <div class="modal-content">
+            <h2>Create BRAIN BITE Account</h2>
+            <input type="text" id="reg-fullname" placeholder="Full Name" class="modal-input">
+            <input type="text" id="reg-username" placeholder="Username" class="modal-input">
+            <input type="email" id="reg-email" placeholder="Email" class="modal-input">
+            <input type="password" id="reg-password" placeholder="Password" class="modal-input">
+            <input type="password" id="reg-confirm-password" placeholder="Confirm Password" class="modal-input">
+            <label>
+                <input type="checkbox" id="remember-me-register"> Remember Me
+            </label>
+            <button class="modal-button" onclick="register()">Create Account</button>
+        </div>
+    </div>
+
+    <!-- User Dashboard -->
+    <div id="user-dashboard" class="dashboard page" style="display: none;">
+        <h1 id="welcome-message">Welcome, User!</h1>
+        <p>Select a programming language to start the quiz:</p>
+        <div class="language-buttons">
+            <button class="lang-btn" onclick="startQuiz('python')">
+                <img src="images/python.png" alt="Python"> Python
+            </button>
+            <button class="lang-btn" onclick="startQuiz('c')">
+                <img src="images/c.png" alt="C"> C
+            </button>
+            <button class="lang-btn" onclick="startQuiz('htmlcss')">
+                <img src="images/htmlcss.png" alt="HTML/CSS"> HTML/CSS
+            </button>
+        </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <div id="quiz-container" class="quiz-container page" style="display: none;">
+        <div id="current-question" class="question"></div>
+    </div>
+
+    <!-- Score Card -->
+    <div id="score-card" class="score-card page" style="display: none;">
+        <div class="falling-flowers"></div>
+        <div class="falling-sparkles"></div>
+        <h2 class="congratulations">Congratulations!</h2>
+        <h2>Your Quiz Score</h2>
+        <p id="final-score"></p>
+        <button class="modal-button" onclick="returnToDashboard()">Back to Dashboard</button>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Binary animation script
+        const binaryAnimation = () => {
+            const digits = document.querySelectorAll('.digit-animation');
+            digits.forEach((digit, index) => {
+                setTimeout(() => {
+                    digit.style.animation = 'binary-fall 5s infinite';
+                }, index * 1000);
+            });
+        };
+
+        window.onload = binaryAnimation;
+    </script>
+</body>
+</html>
